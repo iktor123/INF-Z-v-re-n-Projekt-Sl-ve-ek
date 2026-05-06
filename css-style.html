@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS style — Slávkova stránka</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .swatch {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch-color {
+      height: 60px;
+    }
+    .swatch-info {
+      background: var(--bg);
+      padding: 0.6rem 0.75rem;
+    }
+    .swatch-name {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .swatch-var {
+      font-size: 0.7rem;
+      color: var(--ink3);
+      font-family: monospace;
+    }
+    .font-demo {
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+    .font-demo .sample-display {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .font-demo .sample-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink2);
+      font-weight: 300;
+    }
+    .font-demo .font-name {
+      font-size: 0.75rem;
+      color: var(--ink3);
+      margin-top: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Slávkova stránka</a>
+  <div class="nav-links">
+    <a href="../index.html">Domů</a>
+    <a href="index.html" class="active">Prezentace</a>
+    <a href="../gaming/index.html">Gaming</a>
+    <a href="../zajmy/index.html">Zájmy</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="../index.html">Domů</a>
+    <span class="sep">/</span>
+    <a href="index.html">Prezentace</a>
+    <span class="sep">/</span>
+    <span>CSS style</span>
+  </div>
+
+  <div class="page-header">
+    <p class="eyebrow">Prezentace</p>
+    <h1>CSS style</h1>
+    <p>Přehled vizuálního stylu celého webu — barvy, písma, komponenty a proměnné.</p>
+  </div>
+
+  <section>
+    <h2>Barevná paleta</h2>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f5f2eb;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Pozadí</div>
+          <div class="swatch-var">--bg · #f5f2eb</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1a1a18;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Inkoust</div>
+          <div class="swatch-var">--ink · #1a1a18</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2d5a27;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Akcent zelená</div>
+          <div class="swatch-var">--accent · #2d5a27</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#c8b84a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Akcent zlatá</div>
+          <div class="swatch-var">--accent2 · #c8b84a</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8b3a2a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Akcent terra</div>
+          <div class="swatch-var">--accent3 · #8b3a2a</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ccc9bc;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ohraničení</div>
+          <div class="swatch-var">--border · #ccc9bc</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Písma</h2>
+    <div class="font-demo">
+      <div class="sample-display">Syne — Nadpisy a displej</div>
+      <div class="sample-body">DM Sans — Tělo textu a popisky. Lehký a čitelný font pro dlouhé texty.</div>
+      <div class="font-name">Font pair: Syne 800 + DM Sans 300</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>CSS proměnné (variables)</h2>
+    <div class="item-list">
+      <div class="item"><span class="item-label" style="font-family:monospace">--bg</span><span class="item-meta">barva pozadí stránky</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--surface / --surface2</span><span class="item-meta">povrchy karet a panelů</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--ink / --ink2 / --ink3</span><span class="item-meta">barvy textu (tmavá → světlá)</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--accent / --accent2 / --accent3</span><span class="item-meta">zelená, zlatá, terra akcenty</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--border</span><span class="item-meta">barva rámečků a čar</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--radius</span><span class="item-meta">zaoblení rohů (4px)</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--font-display</span><span class="item-meta">Syne (nadpisy)</span></div>
+      <div class="item"><span class="item-label" style="font-family:monospace">--font-body</span><span class="item-meta">DM Sans (tělo textu)</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; Slávkova stránka</footer>
+</body>
+</html>
